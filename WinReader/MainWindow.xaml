@@ -1,0 +1,58 @@
+﻿<Window x:Class="WinReader.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WinReader"
+        mc:Ignorable="d"
+        Title="WinReader" Height="450" Width="800">
+    <Grid Background="#FFD2EDF7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150" MinWidth="120"/>
+            <ColumnDefinition MinWidth="120"/>
+        </Grid.ColumnDefinitions>
+        <Menu Grid.Row="0" Padding="4" Grid.ColumnSpan="2" Background="#FFC0E1F9">
+            <MenuItem Header="文件">
+                <MenuItem Name="close" Header="关闭" Click="Close_Click"/>
+            </MenuItem>
+            <MenuItem Name="read" Header="朗读" Click="Read_Click"/>
+            <MenuItem Name="pause" Header="暂停" Click="Pause_Click" IsEnabled="False"/>
+            <MenuItem Name="stop" Header="停止" Click="Stop_Click" IsEnabled="False"/>
+            <MenuItem Name="export" Header="导出声音" Click="Export_Click"/>
+        </Menu>
+        <Grid Grid.Row="1">
+            <StackPanel Name="option" Grid.Row="1" Margin="4">
+                <TextBlock>语音选择：</TextBlock>
+                <ComboBox Name="voiceBox" Height="20"  DisplayMemberPath="Value" SelectedValuePath="Key" ItemsSource="{Binding Path=Voices}" SelectedIndex="0" Margin="0,4,0,0" >
+                </ComboBox>
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0" >
+                        <TextBlock >速率：</TextBlock>
+                        <TextBox Name="rate" Width="50" Text="{Binding Path=Rate,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </StackPanel>
+
+                    <Slider Minimum="-10" Value="{Binding ElementName=rate, Path=Text}" Margin="0,8,0,0" Maximum="10" TickPlacement="TopLeft" Background="#FF6EA890" IsSnapToTickEnabled="True" ></Slider>
+                </StackPanel>
+                <StackPanel >
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0" >
+                        <TextBlock >音量：</TextBlock>
+                        <TextBox Name="volume" Width="50" Text="{Binding Path=Volume,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                    </StackPanel>
+
+                    <Slider Minimum="0"  Margin="0,8,0,0" Maximum="100" SmallChange="1" IsSnapToTickEnabled="True" TickPlacement="TopLeft" Background="#FF8FC216" Value="{Binding ElementName=volume,Path=Text}"></Slider>
+                </StackPanel>
+            </StackPanel>
+            <TextBlock Padding="4" VerticalAlignment="Bottom" Foreground="#FF31A395" FontSize="10">luoriloutai@foxmail.com</TextBlock>
+        </Grid>
+        
+
+        <GridSplitter Grid.Column="0" Grid.Row="1" Width="2" Background="#FF97E8B2" ></GridSplitter>
+
+        <TextBox Name="txt" Grid.Row="1" Grid.Column="1" Padding="4" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" VerticalScrollBarVisibility="Auto" FontSize="14" TextBlock.LineHeight="24" Margin="2,4,4,4" SelectionBrush="#FF95F4BF" />
+
+    </Grid>
+</Window>

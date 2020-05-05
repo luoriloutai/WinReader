@@ -1,0 +1,6 @@
+D:\Projects\WinReader\WinReader.Lib\bin\x64\Debug\WinReader.Lib.dll
+D:\Projects\WinReader\WinReader.Lib\bin\x64\Debug\WinReader.Lib.pdb
+D:\Projects\WinReader\WinReader.Lib\obj\x64\Debug\WinReader.Lib.csprojAssemblyReference.cache
+D:\Projects\WinReader\WinReader.Lib\obj\x64\Debug\WinReader.Lib.csproj.CoreCompileInputs.cache
+D:\Projects\WinReader\WinReader.Lib\obj\x64\Debug\WinReader.Lib.dll
+D:\Projects\WinReader\WinReader.Lib\obj\x64\Debug\WinReader.Lib.pdb
