@@ -21,7 +21,15 @@ namespace WinReader.Lib
             }
         }
 
+        public delegate void AfterSpeakDelegate();
+        public event AfterSpeakDelegate AfterSpeak;
+
         private static readonly SpeechSynthesizer synthesizer = new SpeechSynthesizer();
+
+        public Reader()
+        {
+            
+        }
 
         public static Dictionary<string,string> GetAllVoices()
         {
@@ -124,6 +132,10 @@ namespace WinReader.Lib
             catch(Exception e)
             {
                 return false;
+            }
+            finally
+            {
+                AfterSpeak?.Invoke();
             }
             return true;
         }

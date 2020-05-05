@@ -30,6 +30,16 @@ namespace WinReader
             this.text = text;
             this.voice = voice;
             this.reader = reader;
+            this.reader.AfterSpeak += Reader_AfterSpeak;
+        }
+
+        private void Reader_AfterSpeak()
+        {
+            Action CloseWindow = () =>
+            {
+                Close();
+            };
+            Dispatcher.Invoke(CloseWindow);
         }
 
         private void Sure_Click(object sender, RoutedEventArgs e)
@@ -44,9 +54,19 @@ namespace WinReader
                 MessageBox.Show("没有内容，无法导出！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
                 return;
             }
-            exportTips.Visibility = Visibility.Visible;
-            bool r = reader.ExportToWav(voice, text, path.Text);
-            Close();
+            Task.Run(() =>
+            {
+                string savePath = "";
+                Action VisitUi = () =>
+                 {
+                     exportTips.Visibility = Visibility.Visible;
+                     savePath = path.Text;
+                 };
+                Dispatcher.Invoke(VisitUi);
+                bool r = reader.ExportToWav(voice, text, savePath);
+                
+            });
+            
         }
 
         private void SelectPath_Click(object sender, RoutedEventArgs e)

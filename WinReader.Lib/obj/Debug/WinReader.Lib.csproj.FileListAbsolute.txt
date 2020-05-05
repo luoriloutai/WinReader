@@ -4,3 +4,9 @@ D:\Projects\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.csproj.CoreCompileIn
 D:\Projects\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.dll
 D:\Projects\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.pdb
 D:\Projects\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.csprojAssemblyReference.cache
+D:\Projects\CodingWorkspace\WinReader\WinReader.Lib\bin\Debug\WinReader.Lib.dll
+D:\Projects\CodingWorkspace\WinReader\WinReader.Lib\bin\Debug\WinReader.Lib.pdb
+D:\Projects\CodingWorkspace\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.csprojAssemblyReference.cache
+D:\Projects\CodingWorkspace\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.csproj.CoreCompileInputs.cache
+D:\Projects\CodingWorkspace\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.dll
+D:\Projects\CodingWorkspace\WinReader\WinReader.Lib\obj\Debug\WinReader.Lib.pdb

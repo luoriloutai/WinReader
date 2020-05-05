@@ -5,5 +5,7 @@
 /.vs
 /Test
 /packages
-bin
-obj
+/WinReader/bin
+/WinReader/obj
+/WinReader.Lib/bin
+/WinReader.Lib/obj
