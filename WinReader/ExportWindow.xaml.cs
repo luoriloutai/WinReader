@@ -30,7 +30,7 @@ namespace WinReader
             this.text = text;
             this.voice = voice;
             this.reader = reader;
-            this.reader.AfterSpeak += Reader_AfterSpeak;
+            this.reader.AfterExport += Reader_AfterSpeak;
         }
 
         private void Reader_AfterSpeak()

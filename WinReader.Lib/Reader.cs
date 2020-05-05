@@ -21,8 +21,8 @@ namespace WinReader.Lib
             }
         }
 
-        public delegate void AfterSpeakDelegate();
-        public event AfterSpeakDelegate AfterSpeak;
+        public delegate void AfterExportDelegate();
+        public event AfterExportDelegate AfterExport;
 
         private static readonly SpeechSynthesizer synthesizer = new SpeechSynthesizer();
 
@@ -135,7 +135,7 @@ namespace WinReader.Lib
             }
             finally
             {
-                AfterSpeak?.Invoke();
+                AfterExport?.Invoke();
             }
             return true;
         }
