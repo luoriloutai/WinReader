@@ -5,5 +5,5 @@
 /.vs
 /Test
 /packages
-/bin
-/obj
+bin
+obj
